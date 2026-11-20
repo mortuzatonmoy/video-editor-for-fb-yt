@@ -1,0 +1,1 @@
+{"name":"short-video-editor-for-fb-yt","private":true,"type":"module","version":"1.0.0","scripts":{"test":"node --test tests/*.test.mjs","start":"python -m http.server 8765 --directory dist"}}

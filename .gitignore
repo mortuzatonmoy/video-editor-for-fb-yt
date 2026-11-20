@@ -1,0 +1,7 @@
+node_modules/
+dist/vendor/
+test-output/
+__pycache__/
+.openai/
+*.tar.gz
+*.zip
