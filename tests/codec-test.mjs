@@ -9,7 +9,7 @@ const bytes=Buffer.concat(names.map(n=>readFileSync(new URL('../dist/vendor/'+n,
 const core=await createCore({wasmBinary:bytes});
 let logs=[];core.setLogger(({message})=>logs.push(message));
 function exec(args){logs=[];core.exec(...args);const rc=core.ret;core.reset();assert.equal(rc,0,logs.slice(-15).join('\n'));}
-function probe(file){logs=[];core.ffprobe('-v','error','-show_streams','-show_format','-of','json','-o','probe.json',file);console.log('probe return',core.ret,logs);core.reset();return JSON.parse(core.FS.readFile('probe.json',{encoding:'utf8'}));}
+function probe(file){logs=[];core.ffprobe('-v','error','-show_streams','-show_format','-of','json','-o','probe.json',file);assert.ok(core.ret===0||core.ret===-1,logs.join(' '));core.reset();return JSON.parse(core.FS.readFile('probe.json',{encoding:'utf8'}));}
 exec(['-f','lavfi','-i','color=c=red:s=320x180:r=30:d=3','-f','lavfi','-i','sine=frequency=440:duration=3','-c:v','libx264','-pix_fmt','yuv420p','-c:a','aac','-shortest','red.mp4']);
 exec(['-f','lavfi','-i','color=c=blue:s=180x320:r=30:d=2','-c:v','libx264','-pix_fmt','yuv420p','blue.mp4']);
 exec(segmentArgs({input:'red.mp4',start:0,end:1,w:360,h:640,fit:'fit',audio:true,output:'part-0.mp4'}));

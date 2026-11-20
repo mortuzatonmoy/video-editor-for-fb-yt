@@ -2,6 +2,8 @@
 
 **Cutroom** is a browser video editor for removing unwanted sections, combining multiple videos, and exporting an MP4 for Facebook or YouTube. Video files are processed locally in a Web Worker; there is no video upload server and no watermark.
 
+[Open the hosted editor](https://tonmoy-short-video-editor.humble-bell-8288.chatgpt.site) (owner's ChatGPT sign-in required). The source repository is public; the hosted workspace is private.
+
 ## Use it
 
 1. Add one or more videos. MP4 (H.264/AAC) and WebM are the most predictable inputs; MOV support depends on your browser's codecs.
