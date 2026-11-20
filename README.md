@@ -2,7 +2,7 @@
 
 **Cutroom** is a browser video editor for removing unwanted sections, combining multiple videos, and exporting an MP4 for Facebook or YouTube. Video files are processed locally in a Web Worker; there is no video upload server and no watermark.
 
-[Open the hosted editor](https://tonmoy-short-video-editor.humble-bell-8288.chatgpt.site) (owner's ChatGPT sign-in required). The source repository is public; the hosted workspace is private.
+[Open the hosted editor](https://tonmoy-short-video-editor.humble-bell-8288.chatgpt.site) — open to everyone, with no ChatGPT account or login required. The source is public and licensed under GPL-3.0-or-later.
 
 ## Use it
 
